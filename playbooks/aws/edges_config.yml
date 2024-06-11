@@ -1,0 +1,16 @@
+# Select C8000v to deploy
+# Based on the list generated from PnP 
+# Fill with values from results/edges_from_pnp_bootstrap.yml
+edge_instances:
+- hostname: ciscotme-cloud-fabric-cedge-1
+  otp: <OTP>
+  site_id: '1001'
+  system_ip: 192.168.101.1
+  uuid: <UUID>
+  vbond: <VBOND_IP>
+- hostname: ciscotme-cloud-fabric-cedge-2
+  otp: <OTP>
+  site_id: '1002'
+  system_ip: 192.168.102.1
+  uuid: <UUID>
+  vbond: <VBOND_IP>
