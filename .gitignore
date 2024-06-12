@@ -15,6 +15,9 @@ playbooks/aws/ansible_catalystwan_module.log
 vault-password.txt
 playbooks/catalystwan.log
 playbooks/sdwan_config_dev.yml
+#--- user private configs ----------
+playbooks/aws/config/aws_sdwan_config.yml
+playbooks/aws/config/edges_config.yml
 #--- venv ------------
 .env
 .venv

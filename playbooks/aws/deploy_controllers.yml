@@ -7,7 +7,7 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    ./aws_sdwan_config.yml
+    ./config/aws_sdwan_config.yml
   tasks:
   roles:
     - cisco.sdwan_deployment.aws_network_infrastructure
@@ -18,7 +18,7 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - ./aws_sdwan_config.yml
+    - ./config/aws_sdwan_config.yml
     - ./pnp_credentials.yml
     - "{{ results_path_controllers }}"
   roles:
@@ -31,7 +31,7 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - ./aws_sdwan_config.yml
+    - ./config/aws_sdwan_config.yml
     - ./pnp_credentials.yml
     - "{{ results_path_controllers }}"
   roles:

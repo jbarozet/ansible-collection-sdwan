@@ -3,37 +3,37 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - ./aws_sdwan_config.yml
-    - ./edges_config.yml
+    - ./config/aws_sdwan_config.yml
+    - ./config/edges_config.yml
     - "{{ results_path_controllers }}"
   roles:
     - cisco.sdwan_deployment.aws_edges
 
 
 # Onboard edge devices and wait for their reachability
-- name: Activate and validate edge devices
-  hosts: localhost
-  gather_facts: false
-  vars_files:
-    - ./aws_sdwan_config.yml
-    - "{{ results_path_controllers }}"
-    - "{{ results_path_edges }}"
-  roles:
-    - cisco.catalystwan.activate_edges
+# - name: Activate and validate edge devices
+#   hosts: localhost
+#   gather_facts: false
+#   vars_files:
+#     - ./config/aws_sdwan_config.yml
+#     - "{{ results_path_controllers }}"
+#     - "{{ results_path_edges }}"
+#   roles:
+#     - cisco.catalystwan.activate_edges
 
 
 # Attach templates with running-config for all devices
-- name: Set vmanage mode for all devices
-  hosts: localhost
-  gather_facts: false
-  vars_files:
-    - ./aws_sdwan_config.yml
-    - "{{ results_path_controllers }}"
-    - "{{ results_path_edges }}"
-  vars:
-    edge_instances: "{{ deployed_edge_instances }}"
-  roles:
-    - cisco.catalystwan.vmanage_mode
+# - name: Set vmanage mode for all devices
+#   hosts: localhost
+#   gather_facts: false
+#   vars_files:
+#     - ./config/aws_sdwan_config.yml
+#     - "{{ results_path_controllers }}"
+#     - "{{ results_path_edges }}"
+#   vars:
+#     edge_instances: "{{ deployed_edge_instances }}"
+#   roles:
+#     - cisco.catalystwan.vmanage_mode
 
 # After assigning templates, we should add check there to verify that device is managed by templates
 # add to vmanage_mode role.
@@ -43,8 +43,8 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - ./aws_sdwan_config.yml
+    - ./config/aws_sdwan_config.yml
+    - ./config/edges_config.yml
     - "{{ results_path_controllers }}"
-    - "{{ results_path_edges }}"
   roles:
     - cisco.catalystwan.health_checks
