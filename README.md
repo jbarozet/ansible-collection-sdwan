@@ -94,7 +94,7 @@ Current version of the full workflow for bringup SD-WAN assumes that users are f
 
 ## Installing this collection
 
-### Install by cloning this repostiory - recommended way
+### Install by cloning this repository - recommended way
 
 You can install collection by first cloning this repository:
 
@@ -209,6 +209,15 @@ Configuration file is located in:
 
 - for Azure: `playbooks/azure/sdwan_config.yml`
 - for AWS: `playbooks/aws/sdwan_config.yml`.
+
+Start from the examples that are provided:
+
+- copy `playbooks/aws/sdwan_config_example.yml` to `playbooks/aws/sdwan_config.yml`,
+- copy `playbooks/aws/edges_config_example.yml` to `playbooks/aws/edges_config.yml`,
+- copy `playbooks/azure/sdwan_config_example.yml` to `playbooks/azure/sdwan_config.yml`,
+- copy `playbooks/azure/edges_config_example.yml` to `playbooks/azure/edges_config.yml`,
+
+edit them based on your requirements.
 
 Please complete all fields marked as `null`.
 
